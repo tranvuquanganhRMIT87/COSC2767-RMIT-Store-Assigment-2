@@ -35,7 +35,13 @@ app.use(
 app.use(cors());
 
 // Setup the database connection
-setupDB();
+try{
+
+  setupDB();
+} catch(err){
+  console.log(err);
+  process.exit(1);
+}
 
 // Configure Passport.js for authentication
 require('./config/passport')(app);

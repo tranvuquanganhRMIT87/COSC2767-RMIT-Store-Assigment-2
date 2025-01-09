@@ -40,10 +40,12 @@ class Signup extends React.PureComponent {
 
     return (
       <div className='signup-form'>
-        {isLoading && <LoadingIndicator />}
+        {isLoading && <LoadingIndicator data-testid={"loading-state"} />}
         <h2>Create Your Account</h2>
         <hr />
-        <form onSubmit={handleSubmit} noValidate>
+
+        {/* This is for register form testing */}
+        <form onSubmit={handleSubmit} noValidate data-testid={"register-form"}>
           <Row>
             <Col
               xs={{ size: 12, order: 2 }}

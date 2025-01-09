@@ -98,6 +98,7 @@ router.post('/register', async (req, res) => {
       return res.status(400).json({ error: 'You must enter a password.' });
     }
 
+    console.log('email', email);
     const existingUser = await User.findOne({ email });
 
     if (existingUser) {
@@ -157,6 +158,8 @@ router.post('/register', async (req, res) => {
     res.status(400).json({
       error: 'Your request could not be processed. Please try again.'
     });
+
+    console.log(error);
   }
 });
 

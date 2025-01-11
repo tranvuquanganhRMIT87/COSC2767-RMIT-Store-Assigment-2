@@ -5,7 +5,7 @@ pipeline {
         MONGODB_URI = credentials('mongodb-uri')
         NODE_ENV = 'production'
         // Add your Docker registry credentials if needed
-        DOCKER_REGISTRY = 'tranvuquanganh87@gmail.com'
+        DOCKER_REGISTRY = 'tranvuquanganh87'
         DOCKER_CREDENTIALS = credentials('docker-credentials')
     }
 

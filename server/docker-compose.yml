@@ -1,6 +1,6 @@
 # docker-compose.yml
 
-# The main difference is the services section.
+
 version: '3.8'
 services:
   nodejs-backend:    # Backend service

@@ -384,7 +384,15 @@ pipeline {
                     when { environment name: 'BACKEND_CHANGED', value: 'true' }
                     steps {
                         dir('server') {
-                            sh 'npm install'
+                            sh '''
+                        # Install all dependencies including mongoose and testing dependencies
+                        npm install
+                        npm install --save mongoose
+                        npm install --save-dev mongodb-memory-server
+                        npm install --save-dev jest
+                        # Add execute permissions
+                        chmod +x node_modules/.bin/*
+                    '''
                         }
                     }
                 }
@@ -407,10 +415,10 @@ pipeline {
                         dir('server') {
                              // Install Jest explicitly before running tests
                    sh '''
-                        # Ensure jest is installed explicitly
-                        npm install jest --save-dev
-                         npm install --save mongoose
-                        npm install --save-dev mongodb-memory-server
+                        // # Ensure jest is installed explicitly
+                        // npm install jest --save-dev
+                        //  npm install --save mongoose
+                        // npm install --save-dev mongodb-memory-server
                         # Run jest using npx
                         npm run test
                     '''

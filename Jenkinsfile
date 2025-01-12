@@ -410,7 +410,7 @@ pipeline {
                         # Ensure jest is installed explicitly
                         npm install jest --save-dev
                         # Run jest using npx
-                        npx jest
+                        npm run test
                     '''
                         }
                     }

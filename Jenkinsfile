@@ -409,6 +409,8 @@ pipeline {
                    sh '''
                         # Ensure jest is installed explicitly
                         npm install jest --save-dev
+                         npm install --save mongoose
+                        npm install --save-dev mongodb-memory-server
                         # Run jest using npx
                         npm run test
                     '''

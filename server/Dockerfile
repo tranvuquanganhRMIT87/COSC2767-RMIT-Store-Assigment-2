@@ -1,4 +1,4 @@
-#build stage for serverr
+#build stage for server
 
 FROM node:18-alpine
 WORKDIR /usr/src/deplo

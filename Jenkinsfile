@@ -420,7 +420,8 @@ pipeline {
                         //  npm install --save mongoose
                         // npm install --save-dev mongodb-memory-server
                         # Run jest using npx
-                        npm run test
+                        // npm run test
+                        npm run test -- --verbose
                     '''
                         }
                     }

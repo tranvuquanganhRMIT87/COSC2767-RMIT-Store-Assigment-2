@@ -406,9 +406,11 @@ pipeline {
                     steps {
                         dir('server') {
                              // Install Jest explicitly before running tests
-                    sh '''
-                        npm install --save-dev jest
-                        npm run test
+                   sh '''
+                        # Ensure jest is installed explicitly
+                        npm install jest --save-dev
+                        # Run jest using npx
+                        npx jest
                     '''
                         }
                     }

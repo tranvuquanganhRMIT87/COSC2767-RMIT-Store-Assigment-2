@@ -1,4 +1,4 @@
-# Build stage
+# Build stage for client
 FROM node:18-alpine as build
 WORKDIR /app
 COPY package*.json ./
